@@ -11,10 +11,24 @@ exports.addMovie = async (movieObj) => {
 
 exports.listMovies = async () => {
     try {
-    const movies = await Movie.find();
+    const movies = await Movie.find({});
     console.log(movies);
     } catch (error) {
         console.log(error);
+    }
+}
+
+exports.updateMovie = async (movieObj) => {
+    try {
+        const editMovie = await Movie.findOneAndUpdate({title: movieObj.title}, {actor: movieObj.newActor}, {new: true});
+        if (editMovie.modifiedcount > 0) {
+            console.log("Succesfully updated the movie")
+        } else {
+            console.log("Something went wrong")
+            console.log(editMovie)
+        }
+    } catch (error) {
+        console.log(error)
     }
 }
 
