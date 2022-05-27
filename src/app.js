@@ -10,7 +10,7 @@ if (yargsObj.add) {
 } else if (yargsObj.list) {
     await listMovies()
 } else if (yargsObj.update) {
-    await updateMovie({title: yargsObj.title}, {actor: yargsObj.newActor}, {new: true});
+    await updateMovie({title: yargsObj.title, actor: yargsObj.newActor}, {new: true});
 } else if (yargsObj.delete) {
     await deleteMovie({title: yargsObj.title})
 } else {

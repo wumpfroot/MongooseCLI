@@ -20,7 +20,7 @@ exports.listMovies = async () => {
 
 exports.updateMovie = async (movieObj) => {
     try {
-        const editMovie = await Movie.findOneAndUpdate({title: movieObj.title}, {actor: movieObj.newActor}, {new: true});
+        const editMovie = await Movie.findOneAndUpdate({title: movieObj.title}, {actor: movieObj.actor}, {new: true});
         if (editMovie.modifiedcount > 0) {
             console.log("Succesfully updated the movie")
         } else {
