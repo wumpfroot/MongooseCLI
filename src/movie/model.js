@@ -1,3 +1,4 @@
+const { isInteger } = require("mathjs");
 const mongoose = require("mongoose");
 
 const movieSchema = new mongoose.Schema({
@@ -8,7 +9,15 @@ const movieSchema = new mongoose.Schema({
     },
     actor: {
         type: String,
-        default: "Not specified"
+        default: "Not specified",
+    },
+    director: {
+        type: String,
+        default: "Not specified",
+    },
+    year: {
+        type: Number,
+        default: "Not specified",
     },
 });
 

@@ -6,7 +6,7 @@ const { addMovie, listMovies, deleteMovie, updateMovie } = require('./movie/func
 const app = async (yargsObj) => {
 
 if (yargsObj.add) {
-    await addMovie({ title: yargsObj.title, actor: yargsObj.actor })
+    await addMovie({ title: yargsObj.title, actor: yargsObj.actor, director: yargsObj.director, year: yargsObj.year })
 } else if (yargsObj.list) {
     await listMovies()
 } else if (yargsObj.update) {
